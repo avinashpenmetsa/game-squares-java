@@ -1,0 +1,40 @@
+.grid {
+	margin: 1em auto;
+	border-collapse: collapse;
+}
+
+.grid td {
+	cursor: pointer;
+	width: 30px;
+	height: 30px;
+	border: 1px solid #ccc;
+}
+
+#start {
+	text-align: center;
+	cursor: pointer;
+	font-size: 20px;
+}
+
+.playersDiv td {
+	font-size: 20px;
+	padding: 8px;
+}
+
+.playersDiv {
+	width: 200px;
+	float: left;
+	margin: auto;
+	padding: 20px;
+}
+
+.winnerDiv td {
+	font-size: 20px;
+}
+
+.winnerDiv {
+	width: 200px;
+	float: right;
+	padding: 20px;
+	margin: auto;
+}

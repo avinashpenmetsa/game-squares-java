@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project name="GameServer" basedir="." default="build-all">
+    <property file="../Build/build.properties"/>
+    <property name="app.name" value="game"/>
+    <property name="app.war.name" value="${app.name}.war"/>
+    <property name="app.basedir" value="${basedir}"/>
+    <property name="app.src.dir" value="${app.basedir}/src/main/java"/>
+    <property name="app.src.test.dir" value="${app.basedir}/src/test/java"/>
+    <property name="app.webcontent.dir" value="${app.basedir}/src/main/webapp"/>
+    <property name="app.resources.dir" value="${app.basedir}/src/main/resources"/>
+    <property name="app.build.dir" value="${build.dir}/${app.name}"/>
+    <property name="app.build.webinf.dir" value="${build.dir}/${app.name}/WEB-INF"/>
+    <property name="app.build.webinf.classes.dir" value="${app.build.webinf.dir}/classes"/>
+    <property name="app.build.lib.dir" value="${app.basedir}/lib"/>
+
+    <!-- - - - - - - - - - - - - - - - - -
+          target: clean-build-dir
+         - - - - - - - - - - - - - - - - - -->
+    <target name="clean-build-dir">
+        <delete dir="${app.build.dir}"/>
+    </target>
+
+    <!-- - - - - - - - - - - - - - - - - -
+          target: create-build-dir
+         - - - - - - - - - - - - - - - - - -->
+    <target name="create-build-dir">
+        <mkdir dir="${app.build.dir}"/>
+        <mkdir dir="${app.build.webinf.dir}"/>
+        <mkdir dir="${app.build.webinf.classes.dir}"/>
+        <mkdir dir="${app.build.webinf.dir}/lib"/>
+    </target>
+
+    <!-- - - - - - - - - - - - - - - - - -
+          target: compile-classes
+         - - - - - - - - - - - - - - - - - -->
+    <target name="compile-classes">
+        <javac srcdir="${app.src.dir}"
+               destdir="${app.build.webinf.classes.dir}"
+               debug="true"
+               target="1.7"
+               source="1.7">
+            <classpath>
+                <fileset dir="${app.build.lib.dir}">
+                    <include name="**/*.jar"/>
+                </fileset>
+            </classpath>
+        </javac>
+    </target>
+
+    <!-- - - - - - - - - - - - - - - - - -
+          target: copy-resources
+         - - - - - - - - - - - - - - - - - -->
+    <target name="copy-resources">
+        <copy todir="${app.build.dir}" verbose="false">
+            <fileset dir="${app.webcontent.dir}">
+                <exclude name="**/classes/**"/>
+            </fileset>
+        </copy>
+        <copy todir="${app.build.webinf.dir}/lib" verbose="false">
+            <fileset dir="${app.build.lib.dir}"/>
+        </copy>
+    </target>
+
+    <!-- =================================
+          target: build-all
+         ================================= -->
+    <target name="build-all" depends="clean-build-dir,create-build-dir,compile-classes,copy-resources"/>
+</project>
