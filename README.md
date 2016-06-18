@@ -28,7 +28,7 @@ The project is based on Spring MVC model
 * The state of the games is stored in a singleton manager class.
 * The service class contains the logic of the game and updates the data in the manager class.
 * The controller classes maps requests and sends the view to the client. It uses the API provided by service class.
-* Ajax calls are used to update the data on the client page. Server continuously send updates to the client.
+* Ajax calls are used to update the data on the client page. Server continuously sends updates to the client.
 
 ## Screenshots
 ![alt tag](https://raw.githubusercontent.com/avinashpenmetsa/game-squares-java/master/screenshot-1.JPG)
