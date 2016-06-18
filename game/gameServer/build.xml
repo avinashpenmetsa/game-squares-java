@@ -60,9 +60,19 @@
             <fileset dir="${app.build.lib.dir}"/>
         </copy>
     </target>
+	
+	<!-- ================================= 
+          target: create-war              
+         ================================= -->
+    <target name="create-war" depends="clean-build-dir,create-build-dir,compile-classes,copy-resources">
+            <jar destfile="${deploy.dir}/${app.war.name}"
+                basedir="${app.build.dir}" 
+                excludes="**/unittests/**"/>
+    </target>
+
 
     <!-- =================================
           target: build-all
          ================================= -->
-    <target name="build-all" depends="clean-build-dir,create-build-dir,compile-classes,copy-resources"/>
+    <target name="build-all" depends="clean-build-dir,create-build-dir,compile-classes,copy-resources,create-war"/>
 </project>

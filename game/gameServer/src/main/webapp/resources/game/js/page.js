@@ -45,7 +45,7 @@ Game = (function() {
 					++i;
 				}
 			}
-			if(data.creator != player) {
+			if (data.creator != player) {
 				document.getElementById("start").innerHTML = "Not Started";
 			}
 			document.body.appendChild(grid);
@@ -63,6 +63,8 @@ Game = (function() {
 					if (result.gameStatus == 'IN_PROGRESS') {
 						document.getElementById("start").innerHTML = "Started";
 						$('#start').unbind('click');
+					} else {
+						alert('No. of players less than min players');
 					}
 				}
 			});
@@ -74,12 +76,12 @@ Game = (function() {
 				click : function() {
 					Game.startGame();
 				},
-				
-				mouseover: function() {
+
+				mouseover : function() {
 					$(this).css("color", "green");
 				},
-				
-				mouseout: function() {
+
+				mouseout : function() {
 					$(this).css("color", "black");
 				}
 			});
