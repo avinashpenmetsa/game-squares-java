@@ -30,3 +30,7 @@ The project is based on Spring MVC model
 * The controller classes maps requests and sends the view to the client. It uses the API provided by service class.
 * Ajax calls are used to update the data on the client page. Server continuously send updates to the client.
 
+## Screenshots
+![alt tag](https://raw.githubusercontent.com/avinashpenmetsa/game-squares-java/master/screenshot-1.JPG)
+![alt tag](https://raw.githubusercontent.com/avinashpenmetsa/game-squares-java/master/screenshot-2.JPG)
+![alt tag](https://raw.githubusercontent.com/avinashpenmetsa/game-squares-java/master/screenshot-3.JPG)
