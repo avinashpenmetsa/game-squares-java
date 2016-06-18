@@ -93,9 +93,7 @@ Game = (function() {
 			});
 
 			$(document).on('mouseout', '#unselected', function() {
-				if (blocked == 'false') {
-					$(this).css("background-color", "white");
-				}
+				$(this).css("background-color", "white");
 			});
 
 			$(document)
