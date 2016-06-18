@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project name="Game" default="build">
+	<!-- - - - - - - - - - - - - - - - - - 
+          target: build                      
+         - - - - - - - - - - - - - - - - - -->
+    <target name="build">
+        <ant antfile="../gameServer/build.xml" target="build-all" inheritall="false"/>
+    </target>
+</project>
