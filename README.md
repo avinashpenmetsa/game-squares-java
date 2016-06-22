@@ -5,7 +5,7 @@
 * When joining a game, ask for player name
 * Each player is assigned a random color, when he/she joins the game
 * A board of configurable dimension will be shown to all the players
-* A game automatically starts when at least 2 players join it
+* A game can be started when at least min players join it
 * Each player can hover over the board and squares will light up with their assigned color
 * Player can select the square by clicking it
 * A player can acquire the square by clicking it
